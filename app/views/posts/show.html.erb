@@ -1,0 +1,32 @@
+
+<div id="title">
+    <div>
+        <p><%= time_ago_in_words(@post.created_at) %></p>
+        <h1><%= @post.title %></h1>
+       <% if user_signed_in? == current_user %>
+		  <%= link_to '編集', edit_post_path(@post) %> |
+		  <%= link_to '削除', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>|
+	  <% end %>
+    </div>
+</div>
+
+<div id="article_wrap">
+
+    <div id="content">
+        
+                    <h2><%= @post.title %></h2>
+                    <p><%= @post.body %></p>
+ 
+    </div>
+    
+    <div id="sidebar">
+        
+        <h2>★PV数ランキング</h2>
+        <ul>
+            <li><a href="">記事タイトル記事タイトル１記事タイトル記事タイトル<span>（10PV）</span></a></li>
+            <li><a href="">記事タイトル記事タイトル１記事タイトル記事タイトル<span>（8PV）</span></a></li>
+            <li><a href="">記事タイトル記事タイトル１記事タイトル記事タイトル<span>（2PV）</span></a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
